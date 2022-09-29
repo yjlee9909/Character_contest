@@ -1,0 +1,218 @@
+/* animation */
+
+@keyframes 귀오른쪽 {
+    from {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(40deg) translateX(10px);
+    }
+}
+@keyframes 귀왼쪽 {
+    from {
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(-40deg) translateX(-10px);
+    }
+}
+@keyframes 눈왼쪽 {
+    from {
+        transform: translateX(-1px);
+    }
+    to {
+        transform: translateX(1px);
+    }
+}
+@keyframes 눈오른쪽 {
+    from {
+        transform: translateX(1px);
+    }
+    to {
+        transform: translateX(-1px);
+    }
+}
+@keyframes 눈물 {
+    from {
+        height: 20px;
+        
+    }
+    to {
+        height: 80px;
+    }
+}
+/* setting */
+/* reset */
+body {
+    margin: 0;
+    padding: 0;
+}
+/* layout */
+/* design */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cornsilk;
+}
+.character {
+    position: relative;
+    top: 100px;
+    margin: 50px auto;
+    width: 400px;
+    height: 400px;
+    
+}
+.character .ear {
+    position: absolute;
+    top: 88px;
+    width: 70px;
+    height: 60px;
+    border: 10px solid black;
+    border-radius: 35px 35px 0 0;
+    background-color: rgb(255, 225, 176);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.character .ear.left {
+    left: 10px;
+    transform: rotate(-38deg);
+    animation: 귀왼쪽 0.8s infinite alternate;
+}
+.character .ear.right {
+    right: 10px;
+    transform: rotate(38deg);
+    animation: 귀오른쪽 0.8s infinite alternate;
+}
+.character .face {
+    position: absolute;
+    background-color: rgb(255, 225, 176);
+    width: 400px;
+    height: 320px;
+    border: 10px solid black;
+    bottom: 0;
+    border-radius: 50% 50% 35% 35%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.character .face .eyebrow {
+    position: absolute;
+    width: 70px;
+    height: 10px;
+    border: 2px solid black;
+    background-color: black;
+    top: 100px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.character .face .eyebrow.left {
+    left: 70px;
+}
+.character .face .eyebrow.right {
+    right: 70px;
+}
+.character .face .eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid black;
+    top: 140px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.character .face .eye.left {
+    left: 90px;
+    animation: 눈왼쪽 0.1s infinite alternate;
+}
+.character .face .eye.right {
+    right: 90px;
+    animation: 눈오른쪽 0.1s infinite alternate;
+    z-index: 3;
+}
+.character .face .tear {
+    position: absolute;
+    top: 160px;
+    right: 90px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(95, 216, 243);
+    z-index: 2;
+    border: 3px solid black;
+    border-radius: 70% 70% 60% 60%;
+    animation: 눈물 3s infinite alternate;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.character .face .blush {
+    position: absolute;
+    top: 200px;
+    width: 40px;
+    height: 25px;
+    background-color: rgb(244, 162, 229);
+    border-radius: 50%;
+    filter: blur(18px);
+}
+.character .face .blush.left {
+    
+    left: 70px;
+}
+.character .face .blush.right {
+    right: 70px;
+    z-index: 1;
+}
+.character .face .mouse.line {
+    position: absolute;
+    top: 190px;
+    left: 140px;
+    width: 90px;
+    height: 90px;
+    border: 5px solid black;
+    background-color: rgb(238, 128, 128);
+    border-radius: 40%;
+    z-index: 2;
+}
+.character .face .mouse.line.bottom {
+    position: absolute;
+    top: 210px;
+    left: 155px;
+    width: 60px;
+    height: 50px;
+    border: 5px solid black;
+    
+    background-color: rgb(255, 225, 176);
+    border-radius: 40%;
+    z-index: 3;
+}
+.character .face .mouse.line.bottom::before {
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 225, 176);
+    width: 100px;
+    height: 55px;
+    left: -25px;
+    bottom: -27px;
+    z-index: 5;
+}
+
+
+.character .face .mouse.side {
+    position: absolute;
+    top: 225px;
+    
+    width: 20px;
+    height: 10px;
+    border: 5px solid black;
+    border-top: hidden;
+    background-color: rgb(238, 128, 128);
+    border-radius: 0px 0px 10px 10px;
+    z-index: 6;
+}
+.character .face .mouse.side.left {
+    left: 140.25px;
+}
+
+.character .face .mouse.side.right {
+    
+    right: 149.8px;
+}
